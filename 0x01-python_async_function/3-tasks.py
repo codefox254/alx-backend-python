@@ -4,8 +4,10 @@ This module contains the task_wait_random function which creates and returns
 an asyncio Task for the wait_random coroutine.
 """
 
+
 import asyncio
 import importlib
+
 
 # Dynamically import wait_random from 0-basic_async_syntax
 basic_async_syntax = importlib.import_module("0-basic_async_syntax")
@@ -24,4 +26,3 @@ def task_wait_random(max_delay: int) -> asyncio.Task:
                        wait_random.
     """
     return asyncio.create_task(wait_random(max_delay))
-
