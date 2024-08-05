@@ -4,9 +4,11 @@ This module contains the task_wait_n function which creates multiple asyncio
 Tasks for the task_wait_random function and returns the list of delays.
 """
 
+
 import asyncio
 import importlib
 from typing import List
+
 
 # Dynamically import task_wait_random from 3-tasks
 tasks_module = importlib.import_module("3-tasks")
@@ -28,4 +30,3 @@ async def task_wait_n(n: int, max_delay: int) -> List[float]:
     tasks = [task_wait_random(max_delay) for _ in range(n)]
     delays = await asyncio.gather(*tasks)
     return sorted(delays)
-
