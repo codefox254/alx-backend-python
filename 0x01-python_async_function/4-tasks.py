@@ -14,7 +14,6 @@ from typing import List
 tasks_module = importlib.import_module("3-tasks")
 task_wait_random = tasks_module.task_wait_random
 
-
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
     Creates multiple asyncio Tasks for task_wait_random and returns the list of
