@@ -4,6 +4,7 @@ This module contains the wait_n coroutine which spawns multiple wait_random
 coroutines and returns the list of delays in ascending order.
 """
 
+
 import asyncio
 from typing import List
 import importlib
@@ -27,4 +28,3 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     delays = await asyncio.gather(*(wait_random(max_delay) for _ in range(n)))
     return sorted(delays)
-
