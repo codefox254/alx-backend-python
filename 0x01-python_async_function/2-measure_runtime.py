@@ -4,9 +4,11 @@ This module contains the measure_time function which measures the execution
 time of wait_n and returns the average delay.
 """
 
+
 import asyncio
 import importlib
 import time
+
 
 # Dynamically import wait_n from 1-concurrent_coroutines
 concurrent_coroutines = importlib.import_module("1-concurrent_coroutines")
@@ -33,4 +35,3 @@ def measure_time(n: int, max_delay: int) -> float:
     average_delay = total_time / n
     
     return average_delay
-
